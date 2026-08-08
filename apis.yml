@@ -1,7 +1,15 @@
 aid: cadence-neuroscience
 name: Cadence Neuroscience
-description: 'Cadence Neuroscience is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+description: 'Cadence Neuroscience, Inc. is a clinical-stage medical device company founded in 2017 and
+  headquartered in Redmond, Washington, developing a personalized neuromodulation system for pediatric
+  and adult patients with focal drug-resistant epilepsy. Its implantable system, licensed from Mayo Clinic
+  and incubated by a Mayo Clinic Rochester neurology and neurosurgery team, delivers chronic subthreshold
+  cortical stimulation and detects EEG biomarkers of epileptiform activity in order to reduce or eliminate
+  seizures. The company raised a $15M Series A in 2019 and a $26M Series B in 2023 led by the Angelini Lumira
+  Biosciences Fund, with participation from F-Prime Capital, LivaNova USA, Angelini Ventures, Spectrum
+  Financial Services and Mayo Clinic, and is using the proceeds to complete pivotal clinical studies and
+  pursue FDA clearance. It is a regulated medical device manufacturer rather than a software vendor: it
+  publishes no developer portal, public API, SDK or machine-readable API contract.'
 url: https://raw.githubusercontent.com/api-evangelist/cadence-neuroscience/refs/heads/main/apis.yml
 x-type: company
 x-source: harvest:secondary-market
@@ -12,6 +20,13 @@ created: '2026-08-08'
 modified: '2026-08-08'
 tags:
 - Company
+- Medical Devices
+- Health Care
+- Neurotechnology
+- Neuromodulation
+- Epilepsy
+- Medical Technology
+- Clinical Stage
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +34,36 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/cadence-neuroscience-domain-security.yml
 - type: Website
+  url: https://cadenceneuro.com/
+- type: LinkedIn
+  url: https://www.linkedin.com/company/cadence-neuroscience-inc
+- type: Crunchbase
+  url: https://www.crunchbase.com/organization/cadence-neuroscience
+- type: SecondaryMarket
   url: https://www.nasdaqprivatemarket.com/
+x-enrichment:
+  date: '2026-08-08'
+  status: minimal
+  artifacts_added: 1
+  pass: local-v1
+x-coverage:
+  state: blocked
+  reason: bot-challenge
+  detail: 'Every path on cadenceneuro.com — homepage, /llms.txt and all /.well-known/*
+    probes — answered HTTP 202 with a SiteGround anti-bot interstitial (a 169-byte meta-refresh
+    to /.well-known/sgcaptcha/ carrying the sg-captcha challenge header) instead of the
+    page, so not one page of the company''s own surface could be read; DNS/TLS probes
+    and third-party sources still completed.'
+  evidence:
+  - url: https://cadenceneuro.com/
+    status: 202
+  - url: https://cadenceneuro.com/llms.txt
+    status: 202
+  - url: https://cadenceneuro.com/.well-known/security.txt
+    status: 202
+  - url: https://cadenceneuro.com/.well-known/agent-card.json
+    status: 202
+  checked: '2026-08-08'
